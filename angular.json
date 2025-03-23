@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-lab08": {
+    "lab08": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-lab08",
+            "outputPath": "dist/lab08",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-lab08:build:production"
+              "buildTarget": "lab08:build:production"
             },
             "development": {
-              "buildTarget": "angular-lab08:build:development"
+              "buildTarget": "lab08:build:development"
             }
           },
           "defaultConfiguration": "development"
