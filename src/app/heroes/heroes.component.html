@@ -1,0 +1,26 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of pagedHeroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span>
+    <span class="name">{{hero.name | removeSpaces}}</span>
+  </li>
+</ul>
+
+<div class="pagination">
+  <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{currentPage}} of {{totalPages}}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>
+
+<div class="hero-detail" *ngIf="selectedHero">
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" 
+           [(ngModel)]="selectedHero.name" 
+           placeholder="name"
+           inputFormat>
+  </div>
+</div>
